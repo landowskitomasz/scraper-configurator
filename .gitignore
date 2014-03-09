@@ -1,0 +1,25 @@
+# maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
+out/
+logs/
+release/
+debug/
+
+.classpath
+.project
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
