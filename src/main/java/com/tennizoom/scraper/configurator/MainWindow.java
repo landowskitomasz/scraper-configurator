@@ -19,6 +19,7 @@ import javax.swing.Action;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
+import javax.swing.UIManager;
 
 import com.tennizoom.scraper.config.ValueProcessorConfig;
 import com.tennizoom.scraper.configurator.controller.MainWindowController;
@@ -34,6 +35,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JSeparator;
+
+import javax.swing.UIManager.*;
 
 public class MainWindow {
 
@@ -93,6 +96,19 @@ public class MainWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+									
+
+					try {
+						for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+							if ("Nimbus".equals(info.getName())) {
+								UIManager.setLookAndFeel(info.getClassName());
+								break;
+							}
+						}
+					} catch (Exception e) {
+						// If Nimbus is not available, you can set the GUI to another look and feel.
+					}
+				
 					MainWindow window = new MainWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
