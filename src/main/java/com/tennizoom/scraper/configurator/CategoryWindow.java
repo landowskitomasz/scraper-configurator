@@ -553,7 +553,7 @@ public class CategoryWindow extends JFrame{
 					try {
 						if(!get()){
 							JOptionPane.showMessageDialog(CategoryWindow.this, 
-									"Nie uda∏o si´ za∏adowaç strony www, sprawdê czy adres www jest poprawny.");
+									"Nie uda\u0142o si\u0119 za\u0142adowa\u0107 strony www, sprawdê czy adres www jest poprawny.");
 						}
 					} catch (InterruptedException e) {
 					} catch (ExecutionException e) {
@@ -579,13 +579,13 @@ public class CategoryWindow extends JFrame{
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			String name = JOptionPane.showInputDialog("Podaj nazw´ pola:");
+			String name = JOptionPane.showInputDialog("Podaj nazw\u0119 pola:");
 			controller.createNewField(name);
 		}
 	}
 	private class RemoveFieldAction extends AbstractAction {
 		public RemoveFieldAction() {
-			putValue(NAME, "Usuƒ");
+			putValue(NAME, "Usu\u0144");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -626,7 +626,7 @@ public class CategoryWindow extends JFrame{
 	}
 	private class RemoveValueProcessorAction extends AbstractAction {
 		public RemoveValueProcessorAction() {
-			putValue(NAME, "Usuƒ");
+			putValue(NAME, "Usu\u0144");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -637,7 +637,7 @@ public class CategoryWindow extends JFrame{
 	}
 	private class MoveUpValueProcessorAction extends AbstractAction {
 		public MoveUpValueProcessorAction() {
-			putValue(NAME, "Do góry");
+			putValue(NAME, "Do g\u00F3ry");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -646,7 +646,7 @@ public class CategoryWindow extends JFrame{
 	}
 	private class MoveDownAction extends AbstractAction {
 		public MoveDownAction() {
-			putValue(NAME, "Na dó∏");
+			putValue(NAME, "Na d\u00F3\u0142");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -655,7 +655,7 @@ public class CategoryWindow extends JFrame{
 	}
 	private class MoveValueProcessorToDefaultsAction extends AbstractAction {
 		public MoveValueProcessorToDefaultsAction() {
-			putValue(NAME, "PrzenieÊ do domyÊlnych");
+			putValue(NAME, "Przenie\u015b do domy\u015blnych");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {

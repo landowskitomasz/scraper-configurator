@@ -162,7 +162,7 @@ public class MainWindow {
 		mainTab.add(scrollPane, BorderLayout.CENTER);
 		
 		valueProcessorsTab = new JPanel();
-		tabbedPane.addTab("DomyÊlne value processory", null, valueProcessorsTab, null);
+		tabbedPane.addTab("Domy\u015blne value processory", null, valueProcessorsTab, null);
 		valueProcessorsTab.setLayout(new BorderLayout(0, 0));
 		
 		defaultValueProcessorsFieldDetails = new JPanel();
@@ -301,8 +301,8 @@ public class MainWindow {
 		private JFileChooser fileChooser = new JFileChooser();
 		
 		public OpenShopConfigFileAction() {
-			putValue(NAME, "Otwórz");
-			putValue(SHORT_DESCRIPTION, "Wybierz plik konfiguracyjny sklepu aby rozpoczàç jego edycj´.");
+			putValue(NAME, "Otw\u00F3rz");
+			putValue(SHORT_DESCRIPTION, "Wybierz plik konfiguracyjny sklepu aby rozpocz\u0105\u0107 jego edycj\u0119.");
 			
 			FileNameExtensionFilter filter = new FileNameExtensionFilter("Xml file","xml");
 			fileChooser.setFileFilter(filter);
@@ -317,7 +317,7 @@ public class MainWindow {
 					frame.setTitle(selectedFile.getName());
 				}
 				catch(IllegalStateException ex){
-					JOptionPane.showMessageDialog(frame, "Otwieranie nie powiód∏o si´ z powodu: "+ ex.getMessage(), "B∏àd", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "Otwieranie nie powi\u00F3d\u0142o si\u0119 z powodu: "+ ex.getMessage(), "B\u0142\u0105d", JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}
@@ -333,7 +333,7 @@ public class MainWindow {
 		private static final long serialVersionUID = -9139981987597190576L;
 		public AddCategoryAction() {
 			putValue(NAME, "Dodaj");
-			putValue(SHORT_DESCRIPTION, "Dodaj nowà kategori´ do konfiguracji sklepu.");
+			putValue(SHORT_DESCRIPTION, "Dodaj now\u0105 kategori\u0119 do konfiguracji sklepu.");
 		}
 		public void actionPerformed(ActionEvent e) {
 			Category category = controller.createNewCategory();
@@ -385,7 +385,7 @@ public class MainWindow {
 		 */
 		private static final long serialVersionUID = 3855498065978689113L;
 		public MoveUpValueProcessorAction() {
-			putValue(NAME, "Do góry");
+			putValue(NAME, "Do g\u00F3ry");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -398,7 +398,7 @@ public class MainWindow {
 		 */
 		private static final long serialVersionUID = -7831085163437968827L;
 		public MoveDownValueProcessorAction() {
-			putValue(NAME, "Na dó∏");
+			putValue(NAME, "Na d\u00F3\u0142");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -411,7 +411,7 @@ public class MainWindow {
 		 */
 		private static final long serialVersionUID = -3733255515151973669L;
 		public DeleteDefaultValueProcessorAction() {
-			putValue(NAME, "Usuƒ");
+			putValue(NAME, "Usu\u0144");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -430,7 +430,7 @@ public class MainWindow {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			String name = JOptionPane.showInputDialog("Podaj nazw´ pola:");//dialog.getValue();
+			String name = JOptionPane.showInputDialog("Podaj nazw\u0119 pola:");//dialog.getValue();
 			controller.createNewDefaultValueProcessorsField(name);
 		}
 	}
@@ -440,7 +440,7 @@ public class MainWindow {
 		 */
 		private static final long serialVersionUID = 2933482274406024392L;
 		public OpenCategoryAction() {
-			putValue(NAME, "Otwórz");
+			putValue(NAME, "Otw\u00F3rz");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
@@ -516,10 +516,10 @@ public class MainWindow {
 				try{
 					controller.saveToFile(fileToSave);
 					frame.setTitle(fileToSave.getName());	
-					JOptionPane.showMessageDialog(frame, "Zapis zakoƒczony powodzeniem.", "Sukces", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "Zapis zako\u0144czony powodzeniem.", "Sukces", JOptionPane.INFORMATION_MESSAGE);
 				}
 				catch(IllegalStateException ex){
-					JOptionPane.showMessageDialog(frame, "Zapis si´ nie powiód∏ z powodu: "+ ex.getMessage(), "B∏àd", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "Zapis si\u0119 nie powi\u00F3d\u0142 z powodu: "+ ex.getMessage(), "B\u0142\u0105d", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			refreshButtonsActivity();
@@ -538,10 +538,10 @@ public class MainWindow {
 		public void actionPerformed(ActionEvent e) {
 			try{
 				controller.save();
-				JOptionPane.showMessageDialog(frame, "Zapis zakoƒczony powodzeniem.", "Sukces", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(frame, "Zapis zako\u0144czony powodzeniem.", "Sukces", JOptionPane.INFORMATION_MESSAGE);
 			}
 			catch(IllegalStateException ex){
-				JOptionPane.showMessageDialog(frame, "Zapis si´ nie powiód∏ z powodu: "+ ex.getMessage(), "B∏àd", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(frame, "Zapis si\u0119 nie powi\u00F3d\u0142 z powodu: "+ ex.getMessage(), "B\u0142\u0105d", JOptionPane.ERROR_MESSAGE);
 			}
 			
 			refreshButtonsActivity();
@@ -549,7 +549,7 @@ public class MainWindow {
 	}
 	private class RemoveFieldAction extends AbstractAction {
 		public RemoveFieldAction() {
-			putValue(NAME, "Usuƒ");
+			putValue(NAME, "Usu\u0144");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
