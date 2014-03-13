@@ -355,6 +355,7 @@ public class MainWindow {
 			Category category = controller.createNewCategory();
 			CategoryWindow window = new CategoryWindow(category);
 			window.setVisible(true);
+			controller.refreshModels();
 		}
 	}
 	private class AddValueProcessorAction extends AbstractAction {
@@ -463,6 +464,7 @@ public class MainWindow {
 			Category category = controller.getCategoryToOpen(table.getSelectedRow());
 			CategoryWindow window = new CategoryWindow(category);
 			window.setVisible(true);
+			controller.refreshModels();
 		}
 	}
 	private class CopyCategoryAction extends AbstractAction {
@@ -478,6 +480,7 @@ public class MainWindow {
 			Category category = controller.copyCategory(table.getSelectedRow());
 			CategoryWindow window = new CategoryWindow(category);
 			window.setVisible(true);
+			controller.refreshModels();
 		}
 	}
 	private class NewConfigurationAction extends AbstractAction {

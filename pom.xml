@@ -71,7 +71,7 @@
     </configuration>
 </plugin>
 
-<plugin>
+<!-- plugin>
     <groupId>org.bluestemsoftware.open.maven.plugin</groupId>
     <artifactId>launch4j-plugin</artifactId>
     <version>1.5.0.0</version>
@@ -92,7 +92,7 @@
                 <classPath>
                     <mainClass>com.tennizoom.scraper.configurator.MainWindow</mainClass>
                 </classPath>
-                <!-- icon>src/main/resources/icons/logo.ico</icon-->
+                
                 <jre>
                     <minVersion>1.5.0</minVersion>
                     <maxVersion>1.7.0</maxVersion>
@@ -115,7 +115,7 @@
 
        
     </executions>
-</plugin>
+</plugin-->
 		</plugins>
 	</build>
 </project>

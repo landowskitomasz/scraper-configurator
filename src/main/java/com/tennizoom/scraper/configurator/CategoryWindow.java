@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.Box;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -44,7 +45,7 @@ import javax.swing.DefaultComboBoxModel;
 import com.tennizoom.scraper.config.DefaultValueProcessorsPropagation;
 import javax.swing.JCheckBox;
 
-public class CategoryWindow extends JFrame{
+public class CategoryWindow extends JDialog{
 	
 	private static final long serialVersionUID = 762433732899687986L;
 	
@@ -104,6 +105,7 @@ public class CategoryWindow extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		setModal(true);
 		
 		setBounds(150, 150, 914, 453);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

@@ -69,4 +69,10 @@ public class DefaultValueProcessorFieldsModel implements ListModel{
 		}
 	}
 
+	public void refresh() {
+		for(ListDataListener listener : dataListeners){
+			listener.contentsChanged(new ListDataEvent(this, ListDataEvent.CONTENTS_CHANGED, 0, getSize()));
+		}
+	}
+
 }

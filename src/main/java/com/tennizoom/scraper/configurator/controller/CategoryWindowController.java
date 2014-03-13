@@ -169,11 +169,14 @@ public class CategoryWindowController {
 
 	public void addValueProcessor(ValueProcessorConfig createdValueProcessor) {
 		getValueProcessorsTabModel().add(createdValueProcessor);
+		reloadResults();
 	}
 
 	public void applyValueProcessorEdit(ValueProcessorConfig valueProcessor,
 			ValueProcessorConfig editedValueProcessor) {
 		getValueProcessorsTabModel().change(valueProcessor, editedValueProcessor);
+
+		reloadResults();
 	}
 
 	public ValueProcessorConfig getValueProcessorToEdit(int selectedRow) {
@@ -182,15 +185,18 @@ public class CategoryWindowController {
 
 	public void deleteValueProcessor(int selectedRow) {
 		getValueProcessorsTabModel().delete(selectedRow);
+		reloadResults();
 		
 	}
 	public void moveDownValueProcessor(int selectedRow) {
 		getValueProcessorsTabModel().moveDown(selectedRow);
+		reloadResults();
 		
 	}
 
 	public void moveUpValueProcessor(int selectedRow) {
 		getValueProcessorsTabModel().moveUp(selectedRow);
+		reloadResults();
 		
 	}
 

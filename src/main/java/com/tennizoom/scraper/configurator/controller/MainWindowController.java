@@ -102,6 +102,7 @@ public class MainWindowController {
 	public void applyValueProcessorEdit(ValueProcessorConfig valueProcessor,
 			ValueProcessorConfig editedValueProcessor) {
 		getDefaultValueProcessorsTabModel().change(valueProcessor, editedValueProcessor);
+		
 	}
 
 	public void addDefaultValueProcessor(
@@ -211,6 +212,10 @@ public class MainWindowController {
 
 	public void removeField(int selectedIndex) {
 		getDefaultValueProcessorFieldsModel().remove(selectedIndex);
+	}
+
+	public void refreshModels() {
+		getDefaultValueProcessorFieldsModel().refresh();
 	}
 	
 }
