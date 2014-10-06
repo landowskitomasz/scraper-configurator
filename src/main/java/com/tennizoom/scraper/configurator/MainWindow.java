@@ -45,6 +45,7 @@ public class MainWindow {
 	private JButton addButton;
 	private JButton copyButton;
 	private JButton openButton;
+    private JButton removeButton;
 	private JTable table;
 	private JTabbedPane tabbedPane;
 	private JPanel mainTab;
@@ -77,6 +78,7 @@ public class MainWindow {
 	private final Action addFieldAction = new AddFieldAction();
 	private final Action addCategoryAction = new AddCategoryAction();
 	private final Action openCategoryAction = new OpenCategoryAction();
+    private final Action removeCategoryAction = new RemoveCategoryAction();
 	private final Action copyCategoryAction = new CopyCategoryAction();
 	private final Action action = new SaveAsAction();
 	private final Action action_1 = new SaveAction();
@@ -162,7 +164,12 @@ public class MainWindow {
 		openButton.setEnabled(false);
 		openButton.setAction(openCategoryAction);
 		buttonsPanel.add(openButton);
-		
+
+        removeButton = new JButton("Usun");
+        removeButton.setEnabled(false);
+        removeButton.setAction(removeCategoryAction);
+        buttonsPanel.add(removeButton);
+
 		copyButton = new JButton("Kopiuj");
 		copyButton.setEnabled(false);
 		copyButton.setAction(copyCategoryAction);
@@ -293,6 +300,7 @@ public class MainWindow {
 		mntmSaveAs.setEnabled(controller.isConfigurationOpened());
 		table.setEnabled(controller.isConfigurationOpened());
 		openButton.setEnabled(table.getSelectedRow() > -1);
+        removeButton.setEnabled(table.getSelectedRow() > -1);
 		copyButton.setEnabled(table.getSelectedRow() > -1);
 		addButton.setEnabled(controller.isConfigurationOpened());
 		
@@ -467,6 +475,20 @@ public class MainWindow {
 			controller.refreshModels();
 		}
 	}
+
+    private class RemoveCategoryAction extends  AbstractAction {
+
+        public RemoveCategoryAction(){
+            putValue(NAME, "Usun");
+            putValue(SHORT_DESCRIPTION,"Usuwa kategorie");
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            controller.removeCategory(table.getSelectedRow());
+        }
+    }
+
 	private class CopyCategoryAction extends AbstractAction {
 		/**
 		 * 

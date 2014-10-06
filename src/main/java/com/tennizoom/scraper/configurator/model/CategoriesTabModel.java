@@ -100,9 +100,16 @@ public class CategoriesTabModel  implements TableModel {
 	public void add(Category category) {
 		categories.add(category);
 		for(TableModelListener listener : this.tableModelListeners){
-			listener.tableChanged(new TableModelEvent(this,  TableModelEvent.INSERT));
+			listener.tableChanged(new TableModelEvent(this,  categories.indexOf(category), TableModelEvent.INSERT));
 		}
 	}
 
-	
+
+    public void remove(Category category) {
+        int row = categories.indexOf(category);
+        categories.remove(category);
+        for(TableModelListener listener : this.tableModelListeners){
+            listener.tableChanged(new TableModelEvent(this,  row -1, row, TableModelEvent.ALL_COLUMNS, TableModelEvent.DELETE ));
+        }
+    }
 }

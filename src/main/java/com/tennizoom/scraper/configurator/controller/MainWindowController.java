@@ -126,6 +126,11 @@ public class MainWindowController {
 		return category;
 	}
 
+    public void removeCategory(int selectedRow) {
+        Category category = getCategoriesTabModel().getEntry(selectedRow);
+        getCategoriesTabModel().remove(category);
+    }
+
 	public Category createNewCategory() {
 		Category category = new Category();
 		DataEntry productEntry = new DataEntry();
@@ -146,7 +151,7 @@ public class MainWindowController {
 		DataEntry dataEntry = category.getDataEntries().get(0);
 		newDataEntry.setName(dataEntry.getName());
 		newDataEntry.setxPath(dataEntry.getxPath());
-		
+
 		for(DataField field : dataEntry.getFields()){
 			DataField newField = new DataField();
 			newField.setName(field.getName());
@@ -154,7 +159,7 @@ public class MainWindowController {
 			newField.setRequired(field.isRequired());
 			newField.setxPath(field.getxPath());
 			newDataEntry.getFields().add(newField);
-			
+
 			for(ValueProcessorConfig valueProcessorConfig : field.getValueProcessors()){
 				ValueProcessorConfig newValueProcessorConfig = new ValueProcessorConfig();
 				newValueProcessorConfig.setProcessorType(valueProcessorConfig.getProcessorType());
@@ -163,7 +168,7 @@ public class MainWindowController {
 			}
 		}
 		newCategory.getDataEntries().add(newDataEntry);
-		
+
 		getCategoriesTabModel().add(newCategory);
 		return newCategory;
 	}
@@ -183,18 +188,18 @@ public class MainWindowController {
 	public void saveToFile(File fileToSave) {
 		confFile = fileToSave;
 		save();
-		
+
 	}
 
 	public void save() {
 		OutputStream os = null;
 		try {
 			os = new FileOutputStream(confFile);
-			
-			Writer configWriter = new OutputStreamWriter(os); 
 
-			JAXBContext context = JAXBContext.newInstance(new Class[] {Shop.class, Category.class, DataEntry.class, DataField.class, 
-					ValueProcessorConfig.class, ValueProcessorType.class, DefaultValueProcessorField.class, 
+			Writer configWriter = new OutputStreamWriter(os);
+
+			JAXBContext context = JAXBContext.newInstance(new Class[] {Shop.class, Category.class, DataEntry.class, DataField.class,
+					ValueProcessorConfig.class, ValueProcessorType.class, DefaultValueProcessorField.class,
 					DefaultValueProcessors.class, DefaultValueProcessorsPropagation.class});
 			Marshaller marshaller = context.createMarshaller();
 
@@ -217,5 +222,4 @@ public class MainWindowController {
 	public void refreshModels() {
 		getDefaultValueProcessorFieldsModel().refresh();
 	}
-	
 }
