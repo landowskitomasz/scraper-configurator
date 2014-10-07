@@ -485,7 +485,14 @@ public class MainWindow {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            controller.removeCategory(table.getSelectedRow());
+            int result = JOptionPane.showConfirmDialog(
+                    null,
+                    "Czy na pewno chcesz usunac kategorie?",
+                    "Usun kategorie?",
+                    JOptionPane.YES_NO_OPTION);
+            if(result == JOptionPane.YES_OPTION) {
+                controller.removeCategory(table.getSelectedRow());
+            }
         }
     }
 
